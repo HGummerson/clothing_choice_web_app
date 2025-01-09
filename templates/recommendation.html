@@ -1,0 +1,55 @@
+<!-- templates/recommendation.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Recommendation</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Your Recommendation</h1>
+        <nav>
+            <ul>
+                <ul>
+                    <li><a>Based on the weather right now</a></li>
+                    <li class="home-button"><a href="/" class="button-link">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h1>What city and country are you in? (ex victoria,ca) </h1>
+            <p > Enter your city and country (example victoria,ca)</p>
+            <form method="post" action="{{ url_for('weather') }}">
+            {{ form.hidden_tag() }}
+            {{ form.city.label }}
+            {{ form.city }}
+            {{ form.submit }}
+        </form>
+        </section>
+    </main>
+    <h2>Uploaded Closet</h2>
+    <div class="item-container">
+    {% for item in items %}
+        <div class="item-box">
+            <p>{{ item.description }}</p>
+            <img src="{{ url_for('static', filename='uploads/' + item.file_name) }}" alt="Uploaded Image">
+            <a href="{{ url_for('delete_item', item_id=item.id) }}">Delete</a>
+        </div>
+    {% endfor %}
+    </div>
+    <p><a href="{{ url_for('upload') }}">Upload more items</a></p>
+    
+    <!-- Footer -->
+    <footer>
+        <p>FIGURE OUT BACK TO TOP</p>
+    </footer>
+
+</body>
+</html>

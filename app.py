@@ -19,11 +19,13 @@ app.config['UPLOAD_FOLDER'] = os.path.join('static','uploads')
 db.init_app(app)
 migrate = Migrate(app,db)
 
+# Home page
 @app.route('/')
 def index():
     items = Item.query.all()
     return render_template('index.html',items=items)
 
+# Upload clothing page
 @app.route('/upload', methods=['GET','POST'])
 def upload():
     if request.method == 'POST':
@@ -48,6 +50,7 @@ def upload():
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in {'jpg', 'jpeg', 'png', 'gif'}
 
+# Delete clothing button
 @app.route('/delete/<int:item_id>', methods=['GET'])
 def delete_item(item_id):
     item = Item.query.get(item_id)
@@ -58,6 +61,7 @@ def delete_item(item_id):
 
     return redirect(url_for('index'))
 
+# View weather page
 @app.route('/weather', methods=['GET','POST'])
 def weather():
     form = WeatherForm()
@@ -87,6 +91,11 @@ def get_weather(city):
     response = requests.get(url)
     weather_data = response.json()
     return weather_data
+
+# get recommendation page
+@app.route('/recommendation', methods=['GET', 'POST'])
+def generate_recommendation():
+    return 
 
 if __name__ == '__main__':
     with app.app_context():

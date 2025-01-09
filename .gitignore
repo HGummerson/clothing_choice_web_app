@@ -1,2 +1,4 @@
 # .gitignore
 config.py
+.venv
+__pycache__
