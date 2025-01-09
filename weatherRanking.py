@@ -11,13 +11,13 @@ HOT = (20, 100)   # hot pant + hot shirt
 RAIN = "raining"
 WIND = "windy"
 
-# clothing 
-COLD_PANTS = "jeans", "pants", "snow pants", "leggings", "sweat pants"
-COLD_TOPS = "sweater", "hoodie", "long sleeve"
-COATS = "coat", "jacket", "puffer"
-HOT_PANTS = "shorts", "skirt", "cargo shorts", "swim trunks"
-HOT_SHIRTS = "tee shirt", "tee", "tank top", "crop top", "polo"
-RAIN_CLOTH = "rain coat", "rain jacket", "hat", "rain pant"
+# clothing !!todo edit the tagging options to be more specific!!
+COLD_PANTS = "pants", "pants"
+COLD_TOPS = "sweater", "shirt", "coat"
+COATS = "coat" ,"coat"
+HOT_PANTS = "shorts", "skirt", "dress",
+HOT_SHIRTS = "shirt", "shirt"
+RAIN_CLOTH = "rain coat"
 WIND_CLOTH = "rain coat", "coat"
 
 def find_conditions(temp, rain, wind):
