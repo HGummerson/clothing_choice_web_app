@@ -15,6 +15,9 @@ env/
 
 # python bytecode
 __pycache__/
+migrations/versions/*.pyc
+migrations/__pycache__/
+migrations/versions/__pycache__/
 *.pyc
 *.pyo
 
