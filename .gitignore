@@ -1,5 +1,22 @@
 # .gitignore
 
 config.py
+
+# virtual env
 .venv
-__pycache__
+env/
+.env/
+
+# IDE
+.vscode/
+
+# System
+.DS_Store
+
+# python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# log
+*.log
