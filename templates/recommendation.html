@@ -25,7 +25,6 @@
     <main>
         <section>
             <h1>What city and country are you in? (ex victoria,ca) </h1>
-            <p > Enter your city and country (example victoria,ca)</p>
             <form method="post" action="{{ url_for('weather') }}">
             {{ form.hidden_tag() }}
             {{ form.city.label }}
@@ -34,17 +33,11 @@
         </form>
         </section>
     </main>
-    <h2>Uploaded Closet</h2>
-    <div class="item-container">
-    {% for item in items %}
-        <div class="item-box">
-            <p>{{ item.description }}</p>
-            <img src="{{ url_for('static', filename='uploads/' + item.file_name) }}" alt="Uploaded Image">
-            <a href="{{ url_for('delete_item', item_id=item.id) }}">Delete</a>
+    <h2>What you should wear!</h2>
         </div>
     {% endfor %}
     </div>
-    <p><a href="{{ url_for('upload') }}">Upload more items</a></p>
+    <p><a href="{{ url_for('upload') }}">Regenerate</a></p>
     
     <!-- Footer -->
     <footer>
