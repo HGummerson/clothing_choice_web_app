@@ -1,0 +1,50 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <title>My Clothes</title>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>My Clothes</h1>
+        <nav>
+            <ul>
+                <ul>
+                    <li><a href="/upload">Upload Clothes</a></li>
+                    <li><a href="/weather">View Weather</a></li>
+            </ul>
+        </nav>
+        <p>Organize your wardrobe and get outfit recommendations based on the weather!</p>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section>
+            <h1>Welcome to Your Online Closet!</h1>
+            <button type="submit" class="button1"> Get Recommendation </button>
+        </section>
+    </main>
+    <h2>Uploaded Closet</h2>
+    <div class="item-container">
+    {% for item in items %}
+        <div class="item-box">
+            <p>{{ item.description }}</p>
+            <img src="{{ url_for('static', filename='uploads/' + item.file_name) }}" alt="Uploaded Image">
+            <a href="{{ url_for('delete_item', item_id=item.id) }}">Delete</a>
+        </div>
+    {% endfor %}
+    </div>
+    <p><a href="{{ url_for('upload') }}">Upload more items</a></p>
+    
+    <!-- Footer -->
+    <footer>
+        <p>FIGURE OUT BACK TO TOP</p>
+    </footer>
+
+</body>
+</html>

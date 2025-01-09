@@ -1,0 +1,75 @@
+
+header {
+    background-color: #5d3370;
+    color: #fff;
+    text-align: center;
+    padding: 2px;
+}
+.home-button {
+    color: #fff;
+    text-decoration: none;
+    list-style: none;
+    display: inline;
+}
+.button-link {
+    text-decoration: none;
+    color: #fff;
+    background-color: #5d3370;
+    border-radius: 5px;
+    display: inline-block;
+}
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Style for labels */
+label {
+    display: block;
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Style for input fields and select boxes */
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+/* Style for the submit button */
+input[type="submit"] {
+    background-color: #5d3370;
+    color: #fff;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #5d3370;
+}
+
+/* Style for the custom file input */
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+/* Style for select dropdown */
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('arrow-down.png') no-repeat right center;
+    padding-right: 30px;
+}
+
+select option {
+    padding: 5px;
+}

@@ -1,0 +1,37 @@
+<!-- templates/weather.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='weatherstyle.css') }}">   
+    <title>Weather Information</title>
+</head>
+<body >
+    <header>
+        <h1 class="weather-heading">Weather Information</h1>
+        <ul>
+            <li class="home-button"><a href="/" class="button-link">Home</a></li>
+        </ul>
+    </header>
+    <p > Enter your city and country (example victoria,ca)</p>
+    <form method="post" action="{{ url_for('weather') }}">
+        {{ form.hidden_tag() }}
+        {{ form.city.label }}
+        {{ form.city }}
+        {{ form.submit }}
+    </form>
+
+    {% if temperature_c is defined %}
+    <div class="temperature-info">
+        <p>Temperature: {{ temperature_c }} °C</p>
+        <p>Feels Like: {{ feels_like_c }} °C</p>
+        <p>Min Temperature: {{ temp_min_c }} °C</p>
+        <p>Max Temperature: {{ temp_max_c }} °C</p>
+        <p>Type: {{ rain }} </p>
+        <p>Wind: {{ wind }} m/h</p>
+    </div>
+    {% endif %}
+</body>
+</html>

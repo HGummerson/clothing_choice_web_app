@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='uploadstyle.css') }}">
+    <title>Upload</title>
+</head>
+<body>
+    <header>
+        <h1 class="header">Upload Clothing</h1>
+        <ul>
+            <li class="home-button"><a href="/" class="button-link">Home</a></li>
+        </ul>
+    </header>
+    <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data">
+        <label for="description">Item Description:</label>
+        <input type="text" id="description" name="description" required>
+        <br>
+        <label for="file">Select Image:</label>
+        <input type="file" id="file" name="file" accept="image/*" required>
+        <br>
+        <label for="clothingtype">Clothing Type:</label>
+        <select id="clothingtype" name="clothingtype" required>
+            <option value="shirt">Shirt</option>
+            <option value="pants">Pants</option>
+            <option value="dress">Dress</option>
+            <option value="shorts">Shorts</option>
+            <option value="coat">Coat</option>
+            <option value="raincoat">Raincoat</option>
+            <option value="sweater">Sweater</option>
+        </select>
+        <br>
+        <label for="colour">Colour:</label>
+        <select id="colour" name="colour" required>
+            <option value="red">Red</option>
+            <option value="blue">Blue</option>
+            <option value="green">Green</option>
+            <option value="black">Black</option>
+            <option value="grey">Grey</option>
+            <option value="tan">Tan</option>
+            <option value="white">White</option>
+            <option value="pink">Pink</option>
+            <option value="purple">Purple</option>
+            <option value="brown">Brown</option>
+        </select>
+        <br>
+        <input type="submit" value="Upload">
+    </form>
+</body>
+</html>
