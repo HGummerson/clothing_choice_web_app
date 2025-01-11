@@ -16,6 +16,8 @@ This is a work-in-progress web application designed to help users decide what to
 
  - Dynamic Item Display: Displays the name, description, and image of the recommended items.
 
+ ![alt text](<Screenshot 2025-01-10 at 10.54.20 PM.png>)
+
 ## Current Progress
 
  - Basic web interface using Flask and Jinja templates.
