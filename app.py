@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from models import db,Item
-from forms import WeatherForm
+from forms import WeatherForm, RecommendationForm
 from weatherRanking import *
 import json
 import random
@@ -108,7 +108,7 @@ def gen_weather_stats(city):
 
 # generates recommendation using the weather and available clothing in the database
 def generate_recommendation():
-    form = WeatherForm()
+    form = RecommendationForm()
 
     if form.validate_on_submit():
         city = form.city.data
@@ -117,8 +117,14 @@ def generate_recommendation():
         ranking, choices = find_conditions(temperature_c, rain, wind)
         pant = choose_random(choices[0])
         top = choose_random(choices[1])
-        items = [pant, top]
-        return render_template('recommendation.html',items=items, form=form)
+
+        if len(choices) == 3:
+            raincoat = choose_random(choices[2])
+            items = [pant, top, raincoat]
+        else:
+            items = [pant, top]
+
+        return render_template('recommendation.html',items=items, temperature_c=temperature_c,rain=rain, wind=wind, form=form)
     return render_template('recommendation.html', form=form)
 
 # todo: methods to safely fail 

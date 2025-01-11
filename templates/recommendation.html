@@ -32,7 +32,7 @@
         </form>
         </section>
     </main>
-    <h2>What you should wear!</h2>
+    <h2>What you should wear for {{ temperature_c }} °C, Rain conditions: {{ rain }} and wind conditions {{ wind }} m/h!</h2>
         <div class="item-container">
         {% for item in items %}
             {% if item %}
