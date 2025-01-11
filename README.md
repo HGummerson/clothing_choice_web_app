@@ -4,6 +4,8 @@
 
 This is a work-in-progress web application designed to help users decide what to wear based on the weather conditions in their city. By inputting their location, users receive clothing recommendations tailored to the temperature, rainfall, and wind conditions. The system uses a database of clothing items, each with an associated type, description, and image.
 
+![alt text](<Screenshot 2025-01-10 at 9.04.32 PM.png>)
+
 ## Features
 
  - User Input: Users enter their city and country to get weather-based clothing recommendations.
